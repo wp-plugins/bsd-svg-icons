@@ -9,11 +9,11 @@
     <a href="#shortcode">Shortcode Reference</a> |
     <a href="#show_svg">Function Reference</a> |
     <a href="#actions">Action Reference</a> | 
-    <a href="#filters">Filter Reference</a>
+    <a href="#filters">Filter Reference</a> |
+    <a href="#additional">More Info</a>
 </p>
 
-    <a name="icons"></a>
-    <section>
+    <section id="icons">
         <h3 class="section">Icon Packages</h3>
 
         <ul>
@@ -22,15 +22,13 @@
         </ul>
     </section>
 
-    <a name="add-your-own"></a>
-    <section>
+    <section id="add-your-own">
         <h3 class="section">Add Your Own SVG Icons</h3>
 
         <p>Already purchased SVG icons from another company? Great! Just add them to an /svg folder in your active theme's root. You can change the location of these SVGs by using the <a href="#filter-theme_path" class="code">bsd_svg_theme_path</a> filter</p>
     </section>
 
-    <a name="shortcode"></a>
-    <section>
+    <section id="shortcode">
         <h3 class="section">Shortcodes</h3>
 
         <article>
@@ -55,11 +53,10 @@
         </article>
     </section>
 
-    <a name="functions"></a>
-    <section>
+    <section id="functions">
         <h3 class="section">Functions</h3>
 
-        <a name="function-show_svg"></a>
+        <a id="function-show_svg"></a>
         <article>
             <h3>Function Reference/show_svg_icon</h3>
             
@@ -86,13 +83,10 @@
         </article>
     </section>
 
-
-    <a name="actions"></a>
-    <section>
+    <section id="actions">
         <h3 class="section">Actions</h3>
 
-        <a name="action-pre_svg"></a>
-        <article>
+        <article id="action-pre_svg">
             <h3>Action/bsd_pre_svg</h3>
 
             <h4>Usage:</h4>
@@ -111,8 +105,7 @@
             </code></pre>
         </article>
 
-        <a name="action-post_svg"></a>
-        <article>
+        <article id="action-post_svg">
             <h3>Action/bsd_post_svg</h3>
 
             <h4>Usage:</h4>
@@ -132,12 +125,10 @@
         </article>
     </section>
 
-    <a name="filters"></a>
-    <section>
+    <section id="filters">
         <h3 class="section">Filters</h3>
 
-        <a name="filter-theme_path"></a>
-        <article>
+        <article id="filter-theme_path">
             <h3>Filter/bsd_svg_theme_path</h3>
 
             <p>If you're like most developers and designers, you like to have your file structure clean. If you want to keep your SVG icons somewhere else in your theme other than the theme/svg, this is the filter for you.</p>
@@ -145,9 +136,12 @@
             <h4>Parameters:</h4>
             <dl>
                 <dt>$path</dt>
+                    <?php 
+                        $default = get_stylesheet_directory() . '/svg';
+                    ?>
                     <dd>
                         (string) (<em>required</em>) - the path to your theme's svg folder<br/>
-                        Default: <span class="code"><?php echo get_template_directory() . '/svg'; ?></span>
+                        Default: <span class="code"><?php echo $default; ?></span>
                     </dd>
             </dl>
 
@@ -165,8 +159,7 @@
             </code></pre>
         </article>
 
-        <a name="filter-default_library"></a>
-        <article>
+        <article id="filter-default_library">
             <h3>Filter/bsd_svg_default_library</h3>
 
             <p>By default we use our internal "icomoon-free" library. However, if you want to override the default library with one that you have installed in your theme, change it with this.</p>
@@ -192,8 +185,7 @@
             </code></pre>
         </article>
 
-        <a name="filter-default_icon"></a>
-        <article>
+        <article id="filter-default_icon">
             <h3>Filter/bsd_svg_default_icon</h3>
 
             <p>Sometimes you might want a fallback icon if the one selected could not be found. By default, we do not include one, but one can be specified. Program will validate your selection, and if the selection can't be found in the plugin or in your theme's svg directory, it will reset to not showing any fallback icon.</p>
@@ -226,8 +218,7 @@
             </code></pre>
         </article>
 
-        <a name="filter-classes"></a>
-        <article>
+        <article id="filter-classes">
             <h3>Filter/bsd_svg_classes</h3>
 
             <p>This filter is for if you'd like your own custom classes applied to the <span class="code">&lt;svg&gt;</span>.</p>
@@ -256,12 +247,10 @@
 
     </section>
 
-    <a name="additional"></a>
-    <section>
+    <section id="additional">
         <h3 class="section">Additional Functionality</h3>
 
-        <a name="debug_mode"></a>
-        <article>
+        <article id="debug_mode">
             <h3>Debug Mode</h3>
 
             <p>If you're having issues determining if the plugin is working as expected, you can turn on our DEBUG mode by setting this constant in your <span class="code">theme/functions.php</span> file.</p>
@@ -277,4 +266,6 @@
                 <li>The Shortcode is missing required attributes</li>
             </ul>
         </article>
+
+    </section>
 </div>
