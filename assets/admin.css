@@ -1,0 +1,24 @@
+.bsd-icons-admin ul {
+    margin-left: 30px;
+    list-style: disc;
+}
+
+.bsd-icons-admin h3.section {
+    border-top: 1px solid #aaaaaa;
+    margin-top: 2em;
+    padding-top: .5em;
+    font-size: 1.4em;
+}
+
+.bsd-icons-admin article {
+    margin-left: 2em;
+}
+
+.bsd-icons-admin code {
+    padding: 1em;
+    display: block;
+}
+.bsd-icons-admin dd code {
+    padding: 0;
+
+}
