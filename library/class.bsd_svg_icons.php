@@ -32,6 +32,9 @@ class BigSea_SVG_Icons
      */
     public function __construct ()
     {
+
+        require_once ( BSD_SVG_PLUGIN_ROOT . '/library/class.svg_handler.php' );
+
         $default_icon_settings = array( 
             'name' => false, 
             'library' => true 
@@ -74,9 +77,10 @@ class BigSea_SVG_Icons
             do_action ( 'bsd_pre_svg' );
    
             if ( $icon ) {
+                $svg = new SVG_Handler( $this->svgs[$icon]['path'] );
                 echo '
-                <svg class="'.$classes.'" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <use xlink:href="#bsd-icon-'.$icon.'"></use>
+                <svg class="'.$classes.'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <use xlink:href="#bsd-icon-'.$icon.'" viewbox="'.$svg->get_viewBox().'"></use>
                 </svg>
                 ';
             }
@@ -137,8 +141,6 @@ class BigSea_SVG_Icons
         if (count($this->svgs) == 0) return;
         // SVG Definitions
 
-        require_once ( BSD_SVG_PLUGIN_ROOT . '/library/class.svg_handler.php' );
-
         ob_start(); 
         //style="position: absolute; width: 0; height: 0;" width="0" height="0"
         ?>
@@ -150,7 +152,7 @@ class BigSea_SVG_Icons
                         $svg = new SVG_Handler( $data['path'] );
                         ?>
                         
-                        <symbol id="bsd-icon-<?php echo $hash; ?>" viewBox="<?php echo $svg->get_viewBox(); ?>">
+                        <symbol id="bsd-icon-<?php echo $hash; ?>" viewbox="<?php echo $svg->get_viewBox(); ?>">
                             <title><?php echo $data['name']; ?></title>
                             <?php echo $svg->get_paths(); ?>
                         </symbol>
@@ -161,7 +163,13 @@ class BigSea_SVG_Icons
 
             </defs>
         </svg>
-
+        <script>
+            (function ($) {
+                $('.bsd-icon use').each(function(){
+                    $(this).attr('xlink:href',$(this).attr('xlink:href'));
+                });
+            })(jQuery);
+        </script>
         <?php 
 
         $output = ob_get_contents();
