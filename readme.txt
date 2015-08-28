@@ -4,7 +4,7 @@ Donate link: http://bigseadesign.com/
 Tags: svg, icon, icomoon, fonts
 Requires at least: 3.5
 Tested up to: 4.2.4
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,8 +22,8 @@ Built by designers, for designers. Add SVG images with ease, via a single functi
 
 == Changelog ==
 
-= 1.0.1 =
-* [Bug] Broken in Safari, and other browsers that don't ignore the illegal class characters. Whoops.
+= 1.0.2 =
+* [Bug] Fixes for Safari.
 
 = 1.0 =
 * Initial Release
