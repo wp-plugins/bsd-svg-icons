@@ -67,16 +67,16 @@ class BigSea_SVG_Icons
             $icon = $this->find( $name, $library );
         }
 
-        $classes = apply_filters("bsd_svg_classes", "bsd-icon icon-'.$name.' icon-'.$icon.'");
+        $classes = apply_filters("bsd_svg_classes", "bsd-icon icon-".$name." icon-".$icon."");
 
         ob_start ();
 
-            do_action ( 'bsd_pre_svg' );                
-            
+            do_action ( 'bsd_pre_svg' );
+   
             if ( $icon ) {
                 echo '
-                <svg class="'.$classes.'">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bsd-icon-'.$icon.'"></use>
+                <svg class="'.$classes.'" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <use xlink:href="#bsd-icon-'.$icon.'"></use>
                 </svg>
                 ';
             }
@@ -136,7 +136,7 @@ class BigSea_SVG_Icons
     {
         if (count($this->svgs) == 0) return;
         // SVG Definitions
-     
+
         require_once ( BSD_SVG_PLUGIN_ROOT . '/library/class.svg_handler.php' );
 
         ob_start(); 

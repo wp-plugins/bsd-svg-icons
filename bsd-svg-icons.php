@@ -3,7 +3,7 @@
         Plugin Name: SVG Icon Library
         Plugin URI: http://bigseadesign.com/
         Description: Built by designers, for designers. Add SVG images with ease, via a single function or shortcode. Comes with icons from icomoon!
-        Version: 1.0
+        Version: 1.0.2
         Author: Big Sea
         Author URI: http://bigseadesign.com
     */
