@@ -67,7 +67,7 @@ class BigSea_SVG_Icons
             $icon = $this->find( $name, $library );
         }
 
-        $classes = apply_filters("bsd_svg_classes", "bsd-icon icon-'.$name.' icon-'.$icon.'");
+        $classes = apply_filters("bsd_svg_classes", "bsd-icon icon-".$name." icon-".$icon."");
 
         ob_start ();
 
